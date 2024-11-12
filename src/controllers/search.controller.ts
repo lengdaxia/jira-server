@@ -31,6 +31,8 @@ export const search = async (req: Request, res: Response): Promise<void> => {
 
     res.json({ tasks, projects, users });
   } catch (error) {
-    res.status(500).json({ message: "Failed to seach:", error });
+    res
+      .status(500)
+      .json({ message: `Failed to fetch seach data, error: ${error.message}` });
   }
 };
