@@ -26,7 +26,7 @@ export const getTeams = async (req: Request, res: Response): Promise<void> => {
       })
     );
     res.json(teamsWithUserNames);
-  } catch (error) {
+  } catch (error: any) {
     res
       .status(500)
       .json({ message: `Failed to fetch teams data, error ${error.message}` });

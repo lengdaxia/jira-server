@@ -30,7 +30,7 @@ export const search = async (req: Request, res: Response): Promise<void> => {
     });
 
     res.json({ tasks, projects, users });
-  } catch (error) {
+  } catch (error: any) {
     res
       .status(500)
       .json({ message: `Failed to fetch seach data, error: ${error.message}` });
